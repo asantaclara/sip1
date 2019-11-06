@@ -22,7 +22,18 @@ class ActividadController extends Controller
 
     public function store(Request $request)
     {
+        $flag = $request['template'];
+
+        $request['template'] = 0;
+
         $actividad = Actividad::create($request->all());
+
+        if($flag){
+            $request['template'] = 1;
+            $request['cliente_id'] = null;
+
+            $actividad = Actividad::create($request->all());
+        }
 
         return response()->json($actividad, 201);
     }
