@@ -57,6 +57,7 @@ Use App\Actividad;
     Route::delete('profesionales/{profesional}', 'ProfesionalController@delete');
 
 //----------------------------------RECETAS--------------------------------------------------------------------------
+
     Route::get('recetas', 'RecetaController@index');
     Route::get('recetas/{receta}', 'RecetaController@show');
     Route::post('recetas', 'RecetaController@store');
