@@ -45,6 +45,7 @@ Use App\Actividad;
 //----------------------------------NOTAS--------------------------------------------------------------------------
     Route::get('notas', 'NotaController@index');
     Route::get('notas/{nota}', 'NotaController@show');
+    Route::get('notas/cliente/{cliente}', 'NotaController@notasDeCliente');
     Route::post('notas', 'NotaController@store');
     Route::post('notas/{nota}', 'NotaController@update');
     Route::delete('notas/{nota}', 'NotaController@delete');
@@ -64,6 +65,9 @@ Use App\Actividad;
     Route::post('recetas/{receta}', 'RecetaController@update');
     Route::delete('recetas/{receta}', 'RecetaController@delete');
 
+    Route::get('recetas/profesional/{profesional}', 'RecetaController@recetasDeProfesional');
+
+
 //----------------------------------CLIENTERECETA--------------------------------------------------------------------------
     Route::get('clienterecetas', 'ClienteRecetaController@index');
     Route::get('clienterecetas/{clientereceta}', 'ClienteRecetaController@show');
@@ -79,6 +83,9 @@ Use App\Actividad;
     Route::post('profesionalclientes', 'ProfesionalClienteController@store');
     Route::post('profesionalclientes/{profesionalCliente}', 'ProfesionalClienteController@update');
     Route::delete('profesionalclientes/{profesionalCliente}', 'ProfesionalClienteController@delete');
+
+    Route::delete('profesionalclientes/profesional/{profesional}/cliente/{cliente}', 'ProfesionalClienteController@deleteRelacionProfesionalCliente');
+
 
     Route::get('profesionalclientes/clientes/{profesional}', 'ProfesionalClienteController@clientesDeProfesional');
 

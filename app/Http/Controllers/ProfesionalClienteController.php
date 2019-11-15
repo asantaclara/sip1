@@ -42,6 +42,17 @@ class ProfesionalClienteController extends Controller
         return response()->json(null, 204);
     }
 
+    public function deleteRelacionProfesionalCliente(Profesional $profesional, Cliente $cliente)
+    {
+        $result = ProfesionalCliente::where('cliente_id', $cliente->id)->where('profesional_id', $profesional->id)->get();
+
+        foreach ($result as $item) {
+            $item->delete();
+        }
+
+        return response()->json(null, 204);
+    }
+
     public function clientesDeProfesional(Profesional $profesional) {
 
         return $profesional->clientes;

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Profesional;
 use App\Receta;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,11 @@ class RecetaController extends Controller
     public function show(Receta $receta)
     {
         return $receta;
+    }
+
+    public function recetasDeProfesional(Profesional $profesional)
+    {
+        return Receta::where('profesional_id', $profesional->id)->get();
     }
 
     public function store(Request $request)
