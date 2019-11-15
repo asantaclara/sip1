@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cliente;
 use App\Nota;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,11 @@ class NotaController extends Controller
     public function show(Nota $nota)
     {
         return $nota;
+    }
+
+    public function notasDeCliente(Cliente $cliente)
+    {
+        return Nota::where('cliente_id', $cliente->id)->get();
     }
 
     public function store(Request $request)

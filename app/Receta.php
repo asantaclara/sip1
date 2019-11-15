@@ -10,6 +10,7 @@ class Receta extends Model
         'id',
         'tipo_id',
         'profesional_id',
-        'contenido'
+        'contenido' ,
+        'titulo'
     ];
 }
