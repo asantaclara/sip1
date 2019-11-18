@@ -9,6 +9,7 @@ class Nota extends Model
     protected $fillable = [
         'id',
         'cliente_id',
+        'url',
         'tipo_id',
         'profesional_id',
         'contenido',

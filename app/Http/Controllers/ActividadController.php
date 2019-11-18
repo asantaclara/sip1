@@ -15,6 +15,14 @@ class ActividadController extends Controller
 
     }
 
+    public function finalizarActividad(Actividad $actividad)
+    {
+        $actividad->finalizada = 1;
+        $actividad->save();
+
+        return $actividad;
+    }
+
     public function show(Actividad $actividad)
     {
         return $actividad;

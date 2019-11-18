@@ -11,6 +11,7 @@ class Receta extends Model
         'tipo_id',
         'profesional_id',
         'contenido' ,
-        'titulo'
+        'titulo',
+        'url'
     ];
 }
