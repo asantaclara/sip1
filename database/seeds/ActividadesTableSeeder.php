@@ -18,7 +18,7 @@ class ActividadesTableSeeder extends Seeder
 
         $faker = Factory::create();
 
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 50; $i++) {
             Actividad::create([
                 'tipo_id' => $faker->numberBetween($min = 0, $max = 50),
                 'cliente_id' => $faker->numberBetween($min = 0, $max = 100),

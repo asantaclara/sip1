@@ -14,6 +14,7 @@ Use App\Actividad;
 |
 */
 //Route::group(['middleware' => ['web', 'auth']], function () {
+//----------------------------------LOGEO--------------------------------------------------------------------------------
 
 //----------------------------------ACTIVIDADES--------------------------------------------------------------------------
     Route::get('actividades', 'ActividadController@index');
@@ -22,7 +23,7 @@ Use App\Actividad;
     Route::post('actividades/{actividad}', 'ActividadController@update');
     Route::delete('actividades/{actividad}', 'ActividadController@delete');
 
-
+    Route::get('actividades/finalizar/{actividad}', 'ActividadController@finalizarActividad');
     Route::get('actividades/profesional/{profesional}/cliente/{cliente}', 'ActividadController@getActividadesProfesionalCliente');
     Route::get('actividades/profesional/{profesional}', 'ActividadController@getActividadesProfesional');
     Route::get('actividades/cliente/{cliente}', 'ActividadController@getActividadesCliente');
@@ -34,6 +35,8 @@ Use App\Actividad;
     Route::post('clientes', 'ClienteController@store');
     Route::post('clientes/{cliente}', 'ClienteController@update');
     Route::delete('clientes/{cliente}', 'ClienteController@delete');
+
+    Route::get('login/{dni}', 'ClienteController@login');
 
 //----------------------------------MEDICIONES--------------------------------------------------------------------------
     Route::get('mediciones', 'MedicionController@index');
@@ -49,6 +52,16 @@ Use App\Actividad;
     Route::post('notas', 'NotaController@store');
     Route::post('notas/{nota}', 'NotaController@update');
     Route::delete('notas/{nota}', 'NotaController@delete');
+
+//----------------------------------Productos--------------------------------------------------------------------------
+    Route::get('productos', 'ProductosController@index');
+    Route::get('productos/{producto}', 'ProductosController@show');
+    Route::post('productos', 'ProductosController@store');
+    Route::post('productos/{producto}', 'ProductosController@update');
+    Route::delete('productos/{producto}', 'ProductosController@delete');
+
+    Route::get('productos/grupo/{grupo}', 'ProductosController@buscarGrupo');
+    Route::get('productos/grupo/{grupo}/categoria/{categoria}', 'ProductosController@buscarCategoria');
 
 //----------------------------------PROFESIONALES--------------------------------------------------------------------------
     Route::get('profesionales', 'ProfesionalController@index');

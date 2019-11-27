@@ -22,5 +22,6 @@ class Actividad extends Model
         'template',
         'titulo',
         'descripcion',
+        'url'
     ];
 }
