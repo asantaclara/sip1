@@ -13,6 +13,17 @@ class ProductosController extends Controller
 
     }
 
+    public function buscarGrupo($grupo)
+    {
+        return Producto::where('grupo_id', $grupo)->get();
+
+    }
+
+    public function buscarCategoria($grupo, $categoria)
+    {
+        return Producto::where('grupo_id', $grupo)->where('categoria_id', $categoria)->get();
+    }
+
     public function show(Producto $producto)
     {
         return $producto;

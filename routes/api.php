@@ -53,6 +53,16 @@ Use App\Actividad;
     Route::post('notas/{nota}', 'NotaController@update');
     Route::delete('notas/{nota}', 'NotaController@delete');
 
+//----------------------------------Productos--------------------------------------------------------------------------
+    Route::get('productos', 'ProductosController@index');
+    Route::get('productos/{producto}', 'ProductosController@show');
+    Route::post('productos', 'ProductosController@store');
+    Route::post('productos/{producto}', 'ProductosController@update');
+    Route::delete('productos/{producto}', 'ProductosController@delete');
+
+    Route::get('productos/grupo/{grupo}', 'ProductosController@buscarGrupo');
+    Route::get('productos/grupo/{grupo}/categoria/{categoria}', 'ProductosController@buscarCategoria');
+
 //----------------------------------PROFESIONALES--------------------------------------------------------------------------
     Route::get('profesionales', 'ProfesionalController@index');
     Route::get('profesionales/{profesional}', 'ProfesionalController@show');
