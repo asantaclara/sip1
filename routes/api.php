@@ -23,7 +23,7 @@ Use App\Actividad;
     Route::post('actividades/{actividad}', 'ActividadController@update');
     Route::delete('actividades/{actividad}', 'ActividadController@delete');
 
-    Route::get('actividades/finalizar/{actividad}', 'ActividadController@finalizarAct\ividad');
+    Route::get('actividades/finalizar/{actividad}', 'ActividadController@finalizarActividad');
     Route::get('actividades/comenzar/{actividad}', 'ActividadController@comenzarActividad');
 
     Route::get('actividades/profesional/{profesional}/cliente/{cliente}', 'ActividadController@getActividadesProfesionalCliente');

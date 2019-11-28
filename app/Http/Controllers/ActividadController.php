@@ -23,7 +23,7 @@ class ActividadController extends Controller
         return $actividad;
     }
 
-    public function comenzarActividadActividad(Actividad $actividad)
+    public function comenzarActividad(Actividad $actividad)
     {
         $actividad->finalizada = 0;
         $actividad->save();
