@@ -23,7 +23,9 @@ Use App\Actividad;
     Route::post('actividades/{actividad}', 'ActividadController@update');
     Route::delete('actividades/{actividad}', 'ActividadController@delete');
 
-    Route::get('actividades/finalizar/{actividad}', 'ActividadController@finalizarActividad');
+    Route::get('actividades/finalizar/{actividad}', 'ActividadController@finalizarAct\ividad');
+    Route::get('actividades/comenzar/{actividad}', 'ActividadController@comenzarActividad');
+
     Route::get('actividades/profesional/{profesional}/cliente/{cliente}', 'ActividadController@getActividadesProfesionalCliente');
     Route::get('actividades/profesional/{profesional}', 'ActividadController@getActividadesProfesional');
     Route::get('actividades/cliente/{cliente}', 'ActividadController@getActividadesCliente');
@@ -44,6 +46,10 @@ Use App\Actividad;
     Route::post('mediciones', 'MedicionController@store');
     Route::post('mediciones/{medicion}', 'MedicionController@update');
     Route::delete('mediciones/{medicion}', 'MedicionController@delete');
+
+    Route::get('mediciones/cliente/{cliente}', 'MedicionController@medicionesDeCliente');
+
+
 
 //----------------------------------NOTAS--------------------------------------------------------------------------
     Route::get('notas', 'NotaController@index');
@@ -69,6 +75,16 @@ Use App\Actividad;
     Route::post('profesionales', 'ProfesionalController@store');
     Route::post('profesionales/{profesional}', 'ProfesionalController@update');
     Route::delete('profesionales/{profesional}', 'ProfesionalController@delete');
+
+//----------------------------------RECETAPRODUCTO--------------------------------------------------------------------------
+    Route::get('recetaproductos', 'RecetaProductoController@index');
+    Route::get('recetaproductos/{recetaproducto}', 'RecetaProductoController@show');
+    Route::post('recetaproductos', 'RecetaProductoController@store');
+    Route::post('recetaproductos/{recetaproducto}', 'RecetaProductoController@update');
+    Route::delete('recetaproductos/{recetaproducto}', 'RecetaProductoController@delete');
+
+    Route::get('recetaproductos/receta/{receta}', 'RecetaProductoController@productosDeReceta');
+
 
 //----------------------------------RECETAS--------------------------------------------------------------------------
 

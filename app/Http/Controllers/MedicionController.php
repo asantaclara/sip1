@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cliente;
 use App\Medicion;
 use Illuminate\Http\Request;
 
@@ -10,6 +11,13 @@ class MedicionController extends Controller
     public function index()
     {
         return Medicion::all();
+
+    }
+
+    public function medicionesDeCliente(Cliente $cliente)
+    {
+
+        return Medicion::where('cliente_id', $cliente->id)->get();
 
     }
 

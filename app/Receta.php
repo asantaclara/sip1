@@ -14,4 +14,9 @@ class Receta extends Model
         'titulo',
         'url'
     ];
+
+    public function productos()
+    {
+        return $this->belongsToMany('App\Producto','laravel.receta_productos','receta_id', 'producto_id');
+    }
 }
